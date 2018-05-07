@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Item{
+public class Item extends GenericEntity{
 	@Id @GeneratedValue
 	private Long id;
 	@Column

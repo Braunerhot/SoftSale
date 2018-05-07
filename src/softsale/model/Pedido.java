@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Pedido {
+public class Pedido extends GenericEntity{
 	@Id @GeneratedValue
 	private Long id;
 	@OneToOne
@@ -66,13 +66,23 @@ public class Pedido {
 	public List<Item> getItens() {
 		return itens;
 	}
-	public void setItens(List<Item> itens) {
-		this.itens = itens;
+	public void addItem(Item item) {
+		this.itens.add(item);
+	}
+	public void rmItem(Item item) {
+		this.itens.remove(item);
 	}
 	public FormaPagamento getFormaPagamento() {
 		return formaPagamento;
 	}
 	public void setFormaPagamento(FormaPagamento formaPagamento) {
 		this.formaPagamento = formaPagamento;
+	}
+	public Double getValor() {
+		Double valor = 0d;
+		for(Item item: getItens()) {
+			valor += item.getValor();
+		}
+		return valor;
 	}
 }

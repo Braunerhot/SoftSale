@@ -3,8 +3,9 @@ package softsale.model;
 
 public abstract class GenericEntity {
     
-    public abstract Long getId();
-    public abstract void setId(Long id);
+    public Long getId() {
+		return null;
+	}
 
     @Override
     public boolean equals(Object object) {

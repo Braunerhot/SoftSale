@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Produto{
+public class Produto extends GenericEntity{
 	@Id @GeneratedValue
 	private Long id;
 	@Column

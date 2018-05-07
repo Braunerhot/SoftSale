@@ -8,12 +8,12 @@ import softsale.model.dao.PessoaFisicaDao;
 
 public class PessoaFisicaService extends GenericService{	
 	public List<PessoaFisica> getAll(){
-		PessoaFisicaDao PessoaFisicaDao = new PessoaFisicaDao(entityManager);
+		PessoaFisicaDao pessoaFisicaDao = new PessoaFisicaDao(entityManager);
 		List<PessoaFisica> pessoaFisicaList = new ArrayList<>();
 		
 		try {
 			entityManager.getTransaction().begin();
-			pessoaFisicaList = PessoaFisicaDao.findAll();
+			pessoaFisicaList = pessoaFisicaDao.findAll();
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
@@ -24,15 +24,15 @@ public class PessoaFisicaService extends GenericService{
 	}
 	
 	public void saveUpdate(PessoaFisica pessoaFisica) {
-		PessoaFisicaDao PessoaFisicaDao = new PessoaFisicaDao(entityManager);
+		PessoaFisicaDao pessoaFisicaDao = new PessoaFisicaDao(entityManager);
 				
 		try {
 			entityManager.getTransaction().begin();
 
 			if(pessoaFisica.getId() > 0l) {
-				PessoaFisicaDao.update(pessoaFisica);
+				pessoaFisicaDao.update(pessoaFisica);
 			} else {
-				PessoaFisicaDao.save(pessoaFisica);				
+				pessoaFisicaDao.save(pessoaFisica);				
 			}
 			
 			entityManager.getTransaction().commit();
@@ -45,10 +45,10 @@ public class PessoaFisicaService extends GenericService{
 	}
 	
 	public void remove(PessoaFisica pessoaFisica) {
-		PessoaFisicaDao PessoaFisicaDao = new PessoaFisicaDao(entityManager);
+		PessoaFisicaDao pessoaFisicaDao = new PessoaFisicaDao(entityManager);
 		try {
 			entityManager.getTransaction().begin();
-			PessoaFisicaDao.remove(pessoaFisica);
+			pessoaFisicaDao.remove(pessoaFisica);
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
