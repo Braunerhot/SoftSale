@@ -8,31 +8,31 @@ import softsale.model.dao.ItemDao;
 
 public class ItemService extends GenericService{	
 	public List<Item> getAll(){
-		ItemDao ItemDao = new ItemDao(entityManager);
-		List<Item> ItemList = new ArrayList<>();
+		ItemDao itemDao = new ItemDao(entityManager);
+		List<Item> itemList = new ArrayList<>();
 		
 		try {
 			entityManager.getTransaction().begin();
-			ItemList = ItemDao.findAll();
+			itemList = itemDao.findAll();
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
 		}finally {
 			entityManager.close();
 		}
-		return ItemList;
+		return itemList;
 	}
 	
-	public void saveUpdate(Item Item) {
-		ItemDao ItemDao = new ItemDao(entityManager);
+	public void saveUpdate(Item item) {
+		ItemDao itemDao = new ItemDao(entityManager);
 				
 		try {
 			entityManager.getTransaction().begin();
 
-			if(Item.getId() > 0l) {
-				ItemDao.update(Item);
+			if(item.getId() > 0l) {
+				itemDao.update(item);
 			} else {
-				ItemDao.save(Item);				
+				itemDao.save(item);				
 			}
 			
 			entityManager.getTransaction().commit();
@@ -44,11 +44,11 @@ public class ItemService extends GenericService{
 		}
 	}
 	
-	public void remove(Item Item) {
-		ItemDao ItemDao = new ItemDao(entityManager);
+	public void remove(Item item) {
+		ItemDao itemDao = new ItemDao(entityManager);
 		try {
 			entityManager.getTransaction().begin();
-			ItemDao.remove(Item);
+			itemDao.remove(item);
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();

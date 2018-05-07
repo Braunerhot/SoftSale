@@ -8,31 +8,31 @@ import softsale.model.dao.ProdutoDao;
 
 public class ProdutoService extends GenericService{	
 	public List<Produto> getAll(){
-		ProdutoDao ProdutoDao = new ProdutoDao(entityManager);
-		List<Produto> ProdutoList = new ArrayList<>();
+		ProdutoDao produtoDao = new ProdutoDao(entityManager);
+		List<Produto> produtoList = new ArrayList<>();
 		
 		try {
 			entityManager.getTransaction().begin();
-			ProdutoList = ProdutoDao.findAll();
+			produtoList = produtoDao.findAll();
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
 		}finally {
 			entityManager.close();
 		}
-		return ProdutoList;
+		return produtoList;
 	}
 	
-	public void saveUpdate(Produto Produto) {
-		ProdutoDao ProdutoDao = new ProdutoDao(entityManager);
+	public void saveUpdate(Produto produto) {
+		ProdutoDao produtoDao = new ProdutoDao(entityManager);
 				
 		try {
 			entityManager.getTransaction().begin();
 
-			if(Produto.getId() > 0l) {
-				ProdutoDao.update(Produto);
+			if(produto.getId() > 0l) {
+				produtoDao.update(produto);
 			} else {
-				ProdutoDao.save(Produto);				
+				produtoDao.save(produto);				
 			}
 			
 			entityManager.getTransaction().commit();
@@ -44,11 +44,11 @@ public class ProdutoService extends GenericService{
 		}
 	}
 	
-	public void remove(Produto Produto) {
-		ProdutoDao ProdutoDao = new ProdutoDao(entityManager);
+	public void remove(Produto produto) {
+		ProdutoDao produtoDao = new ProdutoDao(entityManager);
 		try {
 			entityManager.getTransaction().begin();
-			ProdutoDao.remove(Produto);
+			produtoDao.remove(produto);
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();

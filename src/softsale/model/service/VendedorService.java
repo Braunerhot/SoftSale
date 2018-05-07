@@ -8,31 +8,31 @@ import softsale.model.dao.VendedorDao;
 
 public class VendedorService extends GenericService{	
 	public List<Vendedor> getAll(){
-		VendedorDao VendedorDao = new VendedorDao(entityManager);
-		List<Vendedor> VendedorList = new ArrayList<>();
+		VendedorDao vendedorDao = new VendedorDao(entityManager);
+		List<Vendedor> vendedorList = new ArrayList<>();
 		
 		try {
 			entityManager.getTransaction().begin();
-			VendedorList = VendedorDao.findAll();
+			vendedorList = vendedorDao.findAll();
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
 		}finally {
 			entityManager.close();
 		}
-		return VendedorList;
+		return vendedorList;
 	}
 	
-	public void saveUpdate(Vendedor Vendedor) {
-		VendedorDao VendedorDao = new VendedorDao(entityManager);
+	public void saveUpdate(Vendedor vendedor) {
+		VendedorDao vendedorDao = new VendedorDao(entityManager);
 				
 		try {
 			entityManager.getTransaction().begin();
 
-			if(Vendedor.getId() > 0l) {
-				VendedorDao.update(Vendedor);
+			if(vendedor.getId() > 0l) {
+				vendedorDao.update(vendedor);
 			} else {
-				VendedorDao.save(Vendedor);				
+				vendedorDao.save(vendedor);				
 			}
 			
 			entityManager.getTransaction().commit();
@@ -44,11 +44,11 @@ public class VendedorService extends GenericService{
 		}
 	}
 	
-	public void remove(Vendedor Vendedor) {
-		VendedorDao VendedorDao = new VendedorDao(entityManager);
+	public void remove(Vendedor vendedor) {
+		VendedorDao vendedorDao = new VendedorDao(entityManager);
 		try {
 			entityManager.getTransaction().begin();
-			VendedorDao.remove(Vendedor);
+			vendedorDao.remove(vendedor);
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();

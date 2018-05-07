@@ -8,31 +8,31 @@ import softsale.model.dao.FormaPagamentoDao;
 
 public class FormaPagamentoService extends GenericService{	
 	public List<FormaPagamento> getAll(){
-		FormaPagamentoDao FormaPagamentoDao = new FormaPagamentoDao(entityManager);
-		List<FormaPagamento> FormaPagamentoList = new ArrayList<>();
+		FormaPagamentoDao formaPagamentoDao = new FormaPagamentoDao(entityManager);
+		List<FormaPagamento> formaPagamentoList = new ArrayList<>();
 		
 		try {
 			entityManager.getTransaction().begin();
-			FormaPagamentoList = FormaPagamentoDao.findAll();
+			formaPagamentoList = formaPagamentoDao.findAll();
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();
 		}finally {
 			entityManager.close();
 		}
-		return FormaPagamentoList;
+		return formaPagamentoList;
 	}
 	
-	public void saveUpdate(FormaPagamento FormaPagamento) {
-		FormaPagamentoDao FormaPagamentoDao = new FormaPagamentoDao(entityManager);
+	public void saveUpdate(FormaPagamento formaPagamento) {
+		FormaPagamentoDao formaPagamentoDao = new FormaPagamentoDao(entityManager);
 				
 		try {
 			entityManager.getTransaction().begin();
 
-			if(FormaPagamento.getId() > 0l) {
-				FormaPagamentoDao.update(FormaPagamento);
+			if(formaPagamento.getId() > 0l) {
+				formaPagamentoDao.update(formaPagamento);
 			} else {
-				FormaPagamentoDao.save(FormaPagamento);				
+				formaPagamentoDao.save(formaPagamento);				
 			}
 			
 			entityManager.getTransaction().commit();
@@ -44,11 +44,11 @@ public class FormaPagamentoService extends GenericService{
 		}
 	}
 	
-	public void remove(FormaPagamento FormaPagamento) {
-		FormaPagamentoDao FormaPagamentoDao = new FormaPagamentoDao(entityManager);
+	public void remove(FormaPagamento formaPagamento) {
+		FormaPagamentoDao formaPagamentoDao = new FormaPagamentoDao(entityManager);
 		try {
 			entityManager.getTransaction().begin();
-			FormaPagamentoDao.remove(FormaPagamento);
+			formaPagamentoDao.remove(formaPagamento);
 			entityManager.getTransaction().commit();
 		}catch (Exception e) {
 			entityManager.getTransaction().rollback();

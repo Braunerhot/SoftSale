@@ -1,10 +1,13 @@
 package softsale.model.dao;
 
 import javax.persistence.EntityManager;
+
+import softsale.model.GenericEntity;
+
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-public abstract class GenericDao<T> {
+public abstract class GenericDao<T extends GenericEntity> {
 
     private final Class<T> entityClass;
     private final EntityManager entityManager;
@@ -35,11 +38,11 @@ public abstract class GenericDao<T> {
     }
 
     public void save(T entity){
-        getEntityManager().persist(entity);
+    	getEntityManager().persist(entity);    		    		 	
     }
-
-    public void update(T entity){
-        getEntityManager().merge(entity);
+    
+    public void update(T entity) {
+    	getEntityManager().merge(entity);
     }
 
     public void remove(T entity){
