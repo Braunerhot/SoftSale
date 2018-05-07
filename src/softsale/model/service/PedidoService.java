@@ -3,12 +3,23 @@ package softsale.model.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import softsale.model.Item;
 import softsale.model.Pedido;
 import softsale.model.dao.ItemDao;
 import softsale.model.dao.PedidoDao;
 
-public class PedidoService extends GenericService{
+public class PedidoService {
+	static EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("SoftSale");;
+	EntityManager entityManager = entityManagerFactory.createEntityManager();
+	
+	public PedidoService() {
+		super();
+	}
+	
 	public List<Pedido> getAll(){
 		PedidoDao PedidoDao = new PedidoDao(entityManager);
 		List<Pedido> PedidoList = new ArrayList<>();
