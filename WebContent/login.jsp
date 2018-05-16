@@ -25,8 +25,8 @@
           <div class="card text-white p-5 bg-primary">
             <div class="card-body">
               <h1 class="mb-4">Login </h1>
-              <h5 class="text-warning text-center">${mensagem0}</h5>
-              <h5 class="text-warning text-center">${mensagem1}</h5>
+              <h5 class="text-danger text-center">${mensagem0}</h5>
+              <h5 class="text-danger text-center">${mensagem1}</h5>
               <form action="/SoftSale/login" method="post">
                 <div class="form-group">
                   <label>CPF</label>

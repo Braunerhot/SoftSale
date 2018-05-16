@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/SoftSale/clientes-list");
 		} else {
 			request.setAttribute("mensagem0", "Error ao fazer login");
-			request.setAttribute("mensagem1", "cpf ou senha incorretos");
+			request.setAttribute("mensagem1", "Verifique os dados e tente novamente");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}	
 	}
