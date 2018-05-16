@@ -32,7 +32,7 @@ public abstract class GenericDao<T extends GenericEntity> {
     }
 
     @SuppressWarnings("unchecked")
-    public List<T> findAll() {
+    public List<T> getAll() {
     	String consulta = String.format("FROM %s", getEntityClass().getName());
         return getEntityManager().createQuery(consulta).getResultList();
     }

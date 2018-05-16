@@ -1,6 +1,7 @@
 package softsale.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,24 +16,27 @@ public class Pessoa extends GenericEntity{
 	@Column
 	private String nome;
 	@Column
-	private int idade;
+	private String cpf;
 	@Column
 	private String telefone;
 	@Column
 	private String email;
+	@Embedded
+	private Endereco endereco;
 	
 	public Pessoa() {
 		super();
 	}
-	public Pessoa(Long id, String nome, int idade, String telefone, String email) {
-		super();
+
+	public Pessoa(Long id, String nome, String cpf, String telefone, String email, Endereco endereco) {
 		this.id = id;
 		this.nome = nome;
-		this.idade = idade;
+		this.cpf = cpf;
 		this.telefone = telefone;
 		this.email = email;
+		this.endereco = endereco;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -45,11 +49,11 @@ public class Pessoa extends GenericEntity{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getIdade() {
-		return idade;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	public String getTelefone() {
 		return telefone;
@@ -62,5 +66,11 @@ public class Pessoa extends GenericEntity{
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }

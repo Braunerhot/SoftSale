@@ -3,12 +3,8 @@
 	<persistence-unit name="SoftSale" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>		
 		
-		<class>softsale.model.FormaPagamento</class>
-		<class>softsale.model.Produto</class>
-		<class>softsale.model.Item</class>
-		<class>softsale.model.PessoaFisica</class>
-		<class>softsale.model.Vendedor</class>
-		<class>softsale.model.Pedido</class>
+		<class>softsale.model.Cliente</class>
+		<class>softsale.model.Fucionario</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
