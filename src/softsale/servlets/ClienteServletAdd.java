@@ -40,6 +40,6 @@ public class ClienteServletAdd extends HttpServlet {
 		ClienteService service = new ClienteService();
 		service.saveUpdate(cliente);
 		
-		response.sendRedirect("/SoftSale/clientes?action=list");
+		response.sendRedirect("/SoftSale/clientes-list");
 	}
 }
