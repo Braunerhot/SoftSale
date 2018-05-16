@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import softsale.model.service.ClienteService;
+import softsale.model.service.FuncionarioService;
 
-@WebServlet("/clientes-remove")
-public class ClienteServletRemove extends HttpServlet {
+@WebServlet("/funcionarios-remove")
+public class FuncionariosServletRemove extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -23,9 +23,9 @@ public class ClienteServletRemove extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		long id = Long.parseLong(request.getParameter("id"));
 
-		ClienteService service = new ClienteService();
+		FuncionarioService service = new FuncionarioService();
 		
 		service.remove(id);
-		response.sendRedirect("/SoftSale/clientes-list");
+		response.sendRedirect("/SoftSale/funcionarios-list");
 	}
 }

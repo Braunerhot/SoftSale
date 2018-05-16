@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/font.css" type="text/css">
   <link rel="stylesheet" href="assets/fontawesome/css/fontawesome-all.css">
-  <link rel="stylesheet" href="assets/theme.css"> 
-  <title>SoftSale - Clientes</title>
+  <link rel="stylesheet" href="assets/theme.css">
+  <title>SoftSale - Funcionários</title>
 </head>
 
 <body>
@@ -44,8 +44,8 @@
           <div class="card">
             <div class="card-header">
               <div class="row col-md-12 m-0 p-0">
-                <h2 class="m-0 mr-auto">Clientes</h2>
-                <a class="btn btn-primary d-inline-flex flex-row" href="/SoftSale/clientes-add.jsp">Adicionar</a>
+                <h2 class="m-0 mr-auto">Funcionários</h2>
+                <a class="btn btn-primary" href="/SoftSale/funcionarios-add.jsp">Adicionar</a>
               </div>
             </div>
             <div class="card-body">
@@ -60,17 +60,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <c:forEach var="cliente" items="${clientes}">
+                  <c:forEach var="funcionario" items="${funcionarios}">
                     <tr>
-                      <td>${cliente.id}</td>
-                      <td>${cliente.nome}</td>
-                      <td>${cliente.cpf}</td>
-                      <td>${cliente.email}</td>
+                      <td>${funcionario.id}</td>
+                      <td>${funcionario.nome}</td>
+                      <td>${funcionario.cpf}</td>
+                      <td>${funcionario.email}</td>
                       <td align="right">
-                        <a href="/SoftSale/clientes-edit?id=${cliente.id}">
+                        <a href="/SoftSale/funcionarios-edit?id=${funcionario.id}">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <a href="/SoftSale/clientes-remove?id=${cliente.id}">
+                        <a href="/SoftSale/funcionarios-remove?id=${funcionario.id}">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

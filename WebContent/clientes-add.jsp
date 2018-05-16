@@ -8,11 +8,11 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css"> 
-  <title>SoftSale - Cadastrar</title>
+  <link rel="stylesheet" href="assets/font.css" type="text/css">
+  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome-all.css">
+  <link rel="stylesheet" href="assets/theme.css">
+  <title>SoftSale - Cadastrar cliente</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
         <div class="btn-group px-1">
           <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Cadastros</button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Clientes</a>
-            <a class="dropdown-item" href="#">Funcionários</a>
+            <a class="dropdown-item" href="/SoftSale/clientes-list">Clientes</a>
+            <a class="dropdown-item" href="/SoftSale/funcionarios-list">Funcionários</a>
           </div>
         </div>
         <ul class="navbar-nav mr-auto"></ul>
@@ -42,16 +42,12 @@
       <div class="row">
         <div class="col-md-12">
           <div class="card">
-            <form action="/SoftSale/clientes?action=add" method="post">
+            <form action="/SoftSale/clientes-add" method="post">
               <div class="card-header">
-                <div class="row">
-                  <div class="col-md-6">
-                    <h2 class="m-0">Cadastro Cliente</h2>
-                  </div>
-                  <div class="row col-md-6 d-flex justify-content-end">
-                    <a href="/SoftSale/clientes?action=list" class="btn btn-outline-primary mx-1">Cancelar</a>
-                    <button type="submit" class="btn btn-primary mx-1">Cadastrar</button>
-                  </div>
+                <div class="row col-md-12 m-0 p-0">
+                  <h2 class="m-0 mr-auto">Cadastro cliente</h2>
+                  <a href="/SoftSale/clientes-list" class="btn btn-outline-primary mx-1">Cancelar</a>
+                  <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
               </div>
               <div class="card-body">
@@ -61,12 +57,12 @@
                       <div class="col-md-8">
                         <div class="form-group">
                           <label>Nome</label>
-                          <input type="text" class="form-control" placeholder="Insira o nome" name="nome"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o nome" name="nome"> </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputEmail1">CPF</label>
-                          <input type="text" class="form-control" placeholder="Insira o CPF" name="cpf"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o CPF" name="cpf"> </div>
                       </div>
                     </div>
                     <h5> Contato </h5>
@@ -89,7 +85,7 @@
                       <div class="col-md-10">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Logradouro</label>
-                          <input type="text" class="form-control" placeholder="Insira o logradouro" name="logradouro"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o logradouro" name="logradouro"> </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
@@ -99,34 +95,31 @@
                       <div class="col-md-5">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Bairro</label>
-                          <input type="text" class="form-control" placeholder="Insira o bairro" name="bairro"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o bairro" name="bairro"> </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Cidade</label>
-                          <input type="text" class="form-control" placeholder="Insira o cidade" name="cidade"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o cidade" name="cidade"> </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Estado</label>
-                          <input type="text" class="form-control" placeholder="Insira o estado" name="estado"> </div>
+                          <input type="text" requerid class="form-control" placeholder="Insira o estado" name="estado"> </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-           </form>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </div>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;
-    <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
-  </pingendo>
+  <script src="assets/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="assets/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="assets/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 
 </html>

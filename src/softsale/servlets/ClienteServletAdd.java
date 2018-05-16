@@ -14,12 +14,12 @@ import softsale.model.service.ClienteService;
 @WebServlet("/clientes-add")
 public class ClienteServletAdd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doPost(req, resp);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
 	}
-	
+		
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String logradouro = request.getParameter("logradouro");

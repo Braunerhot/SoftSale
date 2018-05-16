@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="assets/font.css" type="text/css">
   <link rel="stylesheet" href="assets/fontawesome/css/fontawesome-all.css">
-  <link rel="stylesheet" href="assets/theme.css"> 
-  <title>SoftSale - Cliente ${cliente.id}</title>
+  <link rel="stylesheet" href="assets/theme.css">
+  <title>SoftSale - Funcionário ${funcionario.id}</title>
 </head>
 
 <body>
@@ -42,11 +42,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="card">
-            <form action="/SoftSale/clientes-update?id=${cliente.id}" method="post">
+            <form action="/SoftSale/funcionarios-add" method="post">
               <div class="card-header">
                 <div class="row col-md-12 m-0 p-0">
-                  <h2 class="m-0 mr-auto">Cliente ${cliente.id}</h2>
-                  <a href="/SoftSale/clientes-list" class="btn btn-outline-primary mx-1">Cancelar</a>
+                  <h2 class="m-0 mr-auto">Funcionário ${funcionario.id}</h2>
+                  <a href="/SoftSale/funcionarios-list" class="btn btn-outline-primary mx-1">Cancelar</a>
                   <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
               </div>
@@ -54,16 +54,21 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="row">
-                      <div class="col-md-8">
+                      <div class="col-md-6">
                         <div class="form-group">
                           <label>Nome</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o nome" name="nome" value="${cliente.nome}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o nome" name="nome" value="${funcionario.nome}"> </div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleInputEmail1">CPF</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o CPF" name="cpf" value="${cliente.cpf}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o CPF" name="cpf" value="${funcionario.cpf}"> </div>
                       </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Senha</label>
+                            <input type="password" required class="form-control" placeholder="Insira a senha" name="senha" value="${funcionario.senha}"> </div>
+                        </div>
                     </div>
                     <h5> Contato </h5>
                     <div class="dropdown-divider"> </div>
@@ -71,12 +76,12 @@
                       <div class="col-md-8">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" placeholder="Insira o email" name="email" value="${cliente.email}"> </div>
+                          <input type="email" class="form-control" placeholder="Insira o email" name="email" value="${funcionario.email}"> </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Telefone</label>
-                          <input type="text" class="form-control" placeholder="Insira o telefone" name="telefone" value="${cliente.telefone}"> </div>
+                          <input type="text" class="form-control" placeholder="Insira o telefone" name="telefone" value="${funcionario.telefone}"> </div>
                       </div>
                     </div>
                     <h5> Endereço </h5>
@@ -85,7 +90,7 @@
                       <div class="col-md-10">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Logradouro</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o logradouro" name="logradouro" value="${endereco.logradouro}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o logradouro" name="logradouro" value="${endereco.logradouro}"> </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-group">
@@ -95,23 +100,23 @@
                       <div class="col-md-5">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Bairro</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o bairro" name="bairro" value="${endereco.bairro}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o bairro" name="bairro" value="${endereco.bairro}"> </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Cidade</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o cidade" name="cidade" value="${endereco.cidade}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o cidade" name="cidade" value="${endereco.cidade}"> </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Estado</label>
-                          <input type="text" requerid class="form-control" placeholder="Insira o estado" name="estado" value="${endereco.estado}"> </div>
+                          <input type="text" required class="form-control" placeholder="Insira o estado" name="estado" value="${endereco.estado}"> </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-           </form>
+            </form>
           </div>
         </div>
       </div>

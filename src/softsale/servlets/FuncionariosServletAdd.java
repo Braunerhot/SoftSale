@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import softsale.model.Cliente;
+import softsale.model.Funcionario;
 import softsale.model.Endereco;
-import softsale.model.service.ClienteService;
+import softsale.model.service.FuncionarioService;
 
-@WebServlet("/clientes-update")
-public class ClienteServletUpdate extends HttpServlet {
+@WebServlet("/funcionarios-add")
+public class FuncionariosServletAdd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -30,17 +30,17 @@ public class ClienteServletUpdate extends HttpServlet {
 		
 		Endereco endereco = new Endereco(logradouro, numero, bairro, cidade, estado);
 		
-		Long id = Long.parseLong(request.getParameter("id"));
 		String nome = request.getParameter("nome");
 		String cpf = request.getParameter("cpf");
+		String senha = request.getParameter("senha");
 		String telefone = request.getParameter("telefone");
 		String email = request.getParameter("email");
 		
 		
-		Cliente cliente = new Cliente(id, nome, cpf, telefone, email, endereco);
-		ClienteService service = new ClienteService();
-		service.saveUpdate(cliente);
+		Funcionario funcionario = new Funcionario(null, nome, cpf, senha, telefone, email, endereco);
+		FuncionarioService service = new FuncionarioService();
+		service.saveUpdate(funcionario);
 		
-		response.sendRedirect("/SoftSale/clientes-list");
+		response.sendRedirect("/SoftSale/funcionarios-list");
 	}
 }
