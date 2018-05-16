@@ -32,7 +32,7 @@
         </div>
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline m-0">
-          <button class="btn btn-primary" type="submit">Sair</button>
+          <a class="btn btn-primary" href="/SoftSale/login.jsp">Sair</a>
         </form>
       </div>
     </div>

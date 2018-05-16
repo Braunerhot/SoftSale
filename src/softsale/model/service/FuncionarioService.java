@@ -74,4 +74,19 @@ public class FuncionarioService extends GenericService{
 			entityManager.close();
 		}
 	}
+	
+	public Funcionario autenticar(String cpf, String senha) {
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		FuncionarioDao funcionarioDao = new FuncionarioDao(entityManager);
+		
+		Funcionario funcionario = null;
+		
+		try {
+			funcionario = funcionarioDao.autenticar(cpf, senha);
+		} finally {
+			entityManager.close();
+		}
+		
+		return funcionario;
+	}
 }
